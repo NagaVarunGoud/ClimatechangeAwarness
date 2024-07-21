@@ -35,17 +35,26 @@ nav ul li a {
 }
 
 main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
 }
 
-section {
-    margin-bottom: 20px;
+.container {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px; /* Adjust width as needed */
+    box-sizing: border-box;
 }
 
-section h2 {
+.container h2 {
     color: #333;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+    margin-top: 0;
 }
 
 footer {
