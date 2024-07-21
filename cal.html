@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+    <header>
+        <h1>Carbon Footprint Calculator</h1>
+    </header>
+    <section id="calculator">
+        <form id="carbon-calculator-form">
+            <label for="electricity">Electricity usage (kWh per year):</label>
+            <input type="number" id="electricity" name="electricity" required>
+            
+            <label for="gas">Gas usage (liters per year):</label>
+            <input type="number" id="gas" name="gas" required>
+            
+            <label for="travel">Travel distance (km per year):</label>
+            <input type="number" id="travel" name="travel" required>
+            
+            <button type="submit">Calculate</button>
+        </form>
+        <p id="calculator-result"></p>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>
