@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return (electricity + gas + travel).toFixed(2);
     }
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Optional: Hide the intro animation container when the animation is done
+    const introAnimation = document.getElementById('intro-animation');
+    
+    // Animation will hide the container after it completes
+    introAnimation.addEventListener('animationend', () => {
+        introAnimation.style.display = 'none';
+    });
+});
