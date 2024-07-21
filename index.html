@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="intro-animation">
+        <img id="intro-logo" src="img/logo.png" alt="Intro Logo">
+    </div>
     <header>
         <h1>Climate Awareness</h1>
+        <img class="logo" src="img/logo.png" alt="LOGO">
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -20,8 +24,7 @@
                 <li><a href="#community">Community</a></li>
             </ul>
         </nav>
-        <img src="file:///C:/Users/R%20Sai%20Srujan/Downloads/My%20first%20design%2010%20(1).png" alt="LOGO">
-        <p><a href="about.html"><button type="button">ABOUT US</button></a></p>
+        <p><a href="about.html"><button class="about-btn" type="button">ABOUT US</button></a></p>
     </header>
     <main>
         <h2 class="quote">If the world were a canvas, the climate would be its vibrant hues. Let's come together to preserve its brilliance and ensure its lasting beauty.</h2>
@@ -61,6 +64,22 @@
                 <h5>Join and start your hands-on experience with the community</h5>
             </a>
         </section>
+        <button id="myBtn">⬆</button>
+        <script>
+            window.onscroll = function() {
+                var btn = document.getElementById("myBtn");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    btn.style.display = "block"; // Show the button when scrolled down
+                } else {
+                    btn.style.display = "none"; // Hide the button when at the top
+                }
+            };
+
+            document.getElementById("myBtn").onclick = function() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            };
+        </script>
     </main>
     <footer>
         <p>&copy; 2024 Climate Change Awareness</p>
