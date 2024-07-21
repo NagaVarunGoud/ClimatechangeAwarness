@@ -11,6 +11,14 @@ body {
     color: #fff;
 }
 
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+
 .container-link {
     text-decoration: none;
     width: 100%;
@@ -22,38 +30,87 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 150px;
+    height: 200px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  
 }
 
 .container:hover {
-    transform:translateY(-10px) scale(1.00);
+    transform: translateY(-10px) scale(1.00);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     background-color: rgb(126, 179, 179);
-    
 }
 
 .photo {
-    width: 150px; /* Adjust this as needed */
-    height: 90%;
+    width: 100px; /* Make sure the width and height are equal for a circle */
+    height: 100px; /* Make sure the width and height are equal for a circle */
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 50%; /* Makes the image circular */
+    border-top-left-radius: 0; /* Remove rounded corners on the top left */
+    border-bottom-left-radius: 0; /* Remove rounded corners on the bottom left */
 }
 
 .info {
     padding: 20px;
 }
-h2{
+
+h2 {
     font-family: 'Times New Roman', Times, serif;
 }
+
 h2, p {
     margin: 0;
     color: #333;
+}
+.Home {
+    position: absolute;
+    top: 10px; /* Distance from the top edge */
+    left: 10px; /* Distance from the left edge */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #4CAF50; /* Background color of the button */
+    color: white; /* Text color of the button */
+    border: none; /* Removes default border */
+    border-radius: 100px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 20px; /* Font size of the button text */
+    transition: all 0.5s; /* Smooth transition for hover effects */
+    z-index: 100; /* Ensures the button is on top of other content */
+}
+
+.Home:hover {
+    background-color: #3e8e41; /* Darker color on hover */
+}
+
+.Home:active {
+    background-color: #3e8e41; /* Darker color on active state */
+    box-shadow: 0 5px #666; /* Shadow effect on active state */
+    transform: translateY(4px); /* Pushes the button down slightly on click */
+}
+#myBtn {
+    height: 50px;
+    width: 50px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: rgb(49, 157, 145);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#myBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
 }
