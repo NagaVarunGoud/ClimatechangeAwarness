@@ -1,68 +1,181 @@
-/* General Styles */
 body {
+    background-image: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: rgb(84, 184, 194);
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-
-header h1 {
+    
+    background-color: #a3cccc;
+    color: white;
+    padding: 1em;
     text-align: center;
-    margin: 0;
+    background: rgba(0, 0, 0, 0.415)
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 1em;
 }
 
-nav ul li a {
-    color: #fff;
+header nav ul li a {
+    color: rgb(19, 3, 3);
     text-decoration: none;
-    font-weight: bold;
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+    padding: 2em;
 }
 
-.container {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    width: 300px; /* Adjust width as needed */
-    box-sizing: border-box;
-}
 
-.container h2 {
-    color: #333;
-    margin-top: 0;
-}
 
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #0b4243;
+    color: white;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
+    left: 0;
+    height: 40px;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: blanchedalmond;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+
+}
+
+/*.s1, .s2, .s3, .s4, .s5, .s6{
+    text-align: center;
+    display:inline-block;
+    position: relative;
+    margin: 10px;
+    background-color: #b0c8c0;
+    opacity: 70%;
+
+}*/
+.quote{
+text-align:center;
+text-decoration:dotted ;
+text-transform: capitalize;
+font-family:creative fabrica; 
+color:rgba(0, 0, 0, 0.5);
+font-style: italic;
+}
+button {
+    position: absolute;
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    /* Additional styling for the button */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.5s;
+    cursor: pointer;
+ 
+}
+button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+img{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    padding: 10px 20px;
+}
+.s1{
+    background-image: url('https://www.teachhub.com/wp-content/uploads/2020/05/Top-12-Pioneers-in-Education-scaled.jpg');
+    background-size: cover;
+
+}
+
+.s6{
+    background-image: url('https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg');
+    background-size: cover;
+}
+.s2{
+    background-image: url('https://cefic.org/app/uploads/2023/01/shutterstock_2194842335-1024x614.jpg');
+    background-size: cover;
+   
+}
+.s3{
+    background-image: url('https://www.searchenginejournal.com/wp-content/uploads/2021/08/20-awesome-sources-of-free-data-612c26257336f-sej.jpg');
+    background-size: cover;
+    
+}
+.s4{
+    background-image: url('https://www.ishn.com/ext/resources/900x550/more-900x550/warning-sign.jpg?1580220711');
+    background-size: cover;
+    
+    
+}
+.s5{
+    background-image: url('https://mcdberl.com/wp-content/themes/astra/mcdwebp/mcd-green-img-bem.webp');
+    background-size: cover;
+    
+}
+section {
+    width: 45%;
+    height: 100px;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.s1, .s2, .s3, .s4, .s5, .s6 {
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    background-color: #b0c8c0;
+    opacity: 70%;
+}
+section:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #3E8E41;
+    opacity: 90%;
+}
+
+.full-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2, section h5 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
 }
