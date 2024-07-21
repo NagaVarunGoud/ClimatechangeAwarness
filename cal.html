@@ -26,5 +26,22 @@
         <p id="calculator-result"></p>
     </section>
     <script src="scripts.js"></script>
+    <a href="index.html"><button class="Home"><b>&larr;</b></button></a>
+    <button id="myBtn">⬆</button>
+    <script>
+        window.onscroll = function() {
+            var btn = document.getElementById("myBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block"; // Show the button when scrolled down
+            } else {
+                btn.style.display = "none"; // Hide the button when at the top
+            }
+        };
+
+        document.getElementById("myBtn").onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        };
+    </script>
 </body>
 </html>
