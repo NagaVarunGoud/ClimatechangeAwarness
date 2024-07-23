@@ -8,15 +8,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100; /* Ensure it is on top of other content */
-    animation: introAnimation 3s ease forwards; /* 3s duration, adjust as needed */
+    z-index: 100; 
+    animation: introAnimation 2s ease forwards; 
 }
 
 #intro-logo {
-    width: 100vw; /* Full screen width */
-    height: 100vh; /* Full screen height */
-    object-fit: contain; /* Scale image to fit container */
-    animation: logoAnimation 3s ease forwards; /* Sync with introAnimation */
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; 
+    animation: logoAnimation 2s ease forwards; 
 }
 
 @keyframes introAnimation {
@@ -34,23 +34,23 @@
 
 @keyframes logoAnimation {
     0% {
-        width: 100vw; /* Full screen size */
-        height: 100vh; /* Full screen size */
+        width: 100vw; 
+        height: 100vh; 
         top: 0;
         left: 0;
         transform: scale(1);
     }
     100% {
-        width: 100px; /* Final size */
-        height: 100px; /* Final size */
-        top: 10px; /* Position at the top */
-        left: 10px; /* Position at the left */
-        transform: scale(0.5); /* Shrink */
+        width: 100px;
+        height: 100px; 
+        top: 10px;
+        left: 10px; 
+        transform: scale(0.5); 
     }
 }
 
-/* Existing styles */
-body {
+
+/*body {
     background-image: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,6 +58,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(84, 184, 194);
+}*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
 }
 
 header {
@@ -79,7 +86,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: rgb(19, 3, 3);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
@@ -91,11 +98,44 @@ footer {
     background-color: #0b4243;
     color: white;
     text-align: center;
-    width: 100%;
+    width: 97.3%;
     bottom: 0;
     left: 0;
-    height: 40px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
+    
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+    
+.footer-section {
+    margin: 10px;
+}
+    
+.footer-section h2 {
+    margin-bottom: 10px;
+   }
+    
+.footer-section p,
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+    
+.footer-section a:hover {
+    text-decoration: underline;
+}
+    
+.social-media a {
+    margin: 0 10px;
+}
+    
+
 
 h1 {
     font-family:'Times New Roman', Times, serif;
@@ -111,7 +151,7 @@ h1 {
     color: rgba(0, 0, 0, 0.756);
     font-style: italic;
     opacity: 0;
-    animation: fadeIn 7s ease-in forwards;
+    animation: fadeIn 4s ease-in forwards;
 }
 
 @keyframes fadeIn {
@@ -122,8 +162,8 @@ h1 {
 
 .about-btn {
     position: absolute;
-    top: 10px; /* Slightly moved down for better visibility */
-    right: 10px; /* Slightly moved left for better visibility */
+    top: 10px; 
+    right: 10px; 
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -148,9 +188,14 @@ img.logo {
     position: absolute;
     top: 0;
     left: 0;
-    height: 150px; /* Reduced size */
-    width: 150px; /* Reduced size */
+    height: 150px; 
+    width: 150px; 
 }
+img.head{
+     top: 0;
+
+     position: relative;}
+
 
 .s1, .s2, .s3, .s4, .s5, .s6 {
     width: 45%;
@@ -165,7 +210,7 @@ img.logo {
     display: inline-block;
     margin: 10px;
     background-color: #b0c8c0;
-    opacity: 70%;
+    opacity: 80%;
 }
 
 .s1:hover, .s2:hover, .s3:hover, .s4:hover, .s5:hover, .s6:hover {
@@ -244,4 +289,69 @@ img.logo {
 #myBtn:hover {
     background-color: #45a049;
     transform: scale(1.1);
+}
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quick-links a {
+    margin: 5px 0; 
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items vertically centered */
+}
+
+.social-media a {
+    margin: 0 5px; /* Reduced margin for closer spacing */
+}
+
+.social-logo {
+    width: 35px; /* Set logo size to 15px */
+    height: 35px; /* Set height to 15px */
+    margin-bottom: 0; /* Remove bottom margin if any */
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align links */
+}
+
+.quick-links a {
+    margin: 5px 0; /* Space between links */
 }
