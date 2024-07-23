@@ -26,3 +26,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
         introAnimation.style.display = 'none';
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2';
+    const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.articles;
+            const newsContainer = document.getElementById('news-articles');
+
+            articles.forEach(article => {
+                const articleDiv = document.createElement('div');
+                articleDiv.className = 'news-article';
+
+                const title = document.createElement('h3');
+                title.textContent = article.title;
+
+                const description = document.createElement('p');
+                description.textContent = article.description;
+
+                const link = document.createElement('a');
+                link.href = article.url;
+                link.textContent = 'Read more';
+                link.target = '_blank';
+
+                articleDiv.appendChild(title);
+                articleDiv.appendChild(description);
+                articleDiv.appendChild(link);
+
+                newsContainer.appendChild(articleDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+});
