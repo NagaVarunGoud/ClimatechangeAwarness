@@ -93,9 +93,9 @@ img{
     position: absolute;
     top: 0; 
     left: 0; 
-    padding: 10px 20px;
-    height: fit-content;
-    width: fit-content;
+    padding: 10px 10px;
+    height: 250px;
+    width: 300px;
 }
 
 section {
@@ -121,6 +121,9 @@ section:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     background-color: #3E8E41;
     opacity: 90%;
+}
+global-warming{
+    background-image: url("https://thumbs.dreamstime.com/b/climate-change-global-warming-environmental-day-concept-burning-leaf-land-cracked-earth-metaphor-drought-green-116816412.jpg" );
 }
 
 .full-link {
