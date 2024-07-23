@@ -33,7 +33,11 @@ nav ul li a {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+#global-warming{
+    background: url("https://thumbs.dreamstime.com/b/climate-change-global-warming-environmental-day-concept-burning-leaf-land-cracked-earth-metaphor-drought-green-116816412.jpg");
+    height: 250px;
+    width: 300px;
+}
 h2 {
     color: #333;
 }
