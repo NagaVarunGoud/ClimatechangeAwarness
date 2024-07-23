@@ -53,3 +53,11 @@ footer {
     bottom: 0;
     margin-bottom: 2px;
 }
+.photo {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%; 
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0; 
+}
