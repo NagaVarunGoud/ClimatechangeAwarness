@@ -46,9 +46,6 @@ exports.handler = async (event, context) => {
         };
     }
 };
-
-import fetch from 'node-fetch';
-
 document.addEventListener("DOMContentLoaded", function() {
     const url = '/.netlify/functions/news-proxy';
 
