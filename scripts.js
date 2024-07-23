@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                const articles = data.articles;
+                const articles = data.articles || [];
                 const newsContainer = document.getElementById('news-articles');
 
-                if (articles.length === 0) {
+                if (!articles.length) {
                     newsContainer.innerHTML = '<p>No articles found.</p>';
                 } else {
                     newsContainer.innerHTML = ''; // Clear existing content
