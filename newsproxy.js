@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
-    const apiKey = 'YOUR_NEWS_API_KEY'; // Replace with your actual API key
+    const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
 
     try {
