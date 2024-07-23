@@ -95,7 +95,37 @@ img{
     left: 0; 
     padding: 10px 20px;
 }
+.s1{
+    background-image: url('https://www.teachhub.com/wp-content/uploads/2020/05/Top-12-Pioneers-in-Education-scaled.jpg');
+    background-size: cover;
 
+}
+
+.s6{
+    background-image: url('https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg');
+    background-size: cover;
+}
+.s2{
+    background-image: url('https://cefic.org/app/uploads/2023/01/shutterstock_2194842335-1024x614.jpg');
+    background-size: cover;
+   
+}
+.s3{
+    background-image: url('https://www.searchenginejournal.com/wp-content/uploads/2021/08/20-awesome-sources-of-free-data-612c26257336f-sej.jpg');
+    background-size: cover;
+    
+}
+.s4{
+    background-image: url('https://www.ishn.com/ext/resources/900x550/more-900x550/warning-sign.jpg?1580220711');
+    background-size: cover;
+    
+    
+}
+.s5{
+    background-image: url('https://mcdberl.com/wp-content/themes/astra/mcdwebp/mcd-green-img-bem.webp');
+    background-size: cover;
+    
+}
 section {
     width: 45%;
     height: 100px;
