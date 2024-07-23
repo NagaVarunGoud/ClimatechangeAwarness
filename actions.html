@@ -146,7 +146,54 @@
             </section>
         </div>
     </main>
-
+    .Home {
+        position: absolute;
+        top: 10px; /* Distance from the top edge */
+        left: 10px; /* Distance from the left edge */
+        padding: 10px 20px; /* Padding inside the button */
+        background-color: #4CAF50; /* Background color of the button */
+        color: white; /* Text color of the button */
+        border: none; /* Removes default border */
+        border-radius: 100px; /* Rounds the corners of the button */
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        font-size: 20px; /* Font size of the button text */
+        transition: all 0.5s; /* Smooth transition for hover effects */
+        z-index: 100; /* Ensures the button is on top of other content */
+    }
+    
+    .Home:hover {
+        background-color: #3e8e41; /* Darker color on hover */
+    }
+    
+    .Home:active {
+        background-color: #3e8e41; /* Darker color on active state */
+        box-shadow: 0 5px #666; /* Shadow effect on active state */
+        transform: translateY(4px); /* Pushes the button down slightly on click */
+    }
+    #myBtn {
+        height: 50px;
+        width: 50px;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        background-color: rgb(49, 157, 145);
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    #myBtn:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+    }
     <footer>
         <p>&copy; 2024 Climate Action. All rights reserved.</p>
     </footer>
