@@ -1,26 +1,110 @@
 body {
-    background-image: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: rgb(84, 184, 194);
+    font-family: Arial, sans-serif;
+    background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000; /* Set default text color to black */
 }
-h1 
-{
-        font-family:'Times New Roman', Times, serif;
-        color: blanchedalmond;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        text-align: center;
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 14);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
 }
-div{
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city-weather {
+
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: rgba(34, 42, 56, 0.466); /* Semi-transparent background for readability */
+    justify-content: space-between;
+    background: rgba(14, 92, 65, 0.53);
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    margin: 10px;   
+    margin: 10px;
+    width: 100%; /* Increase the width of the container */
+    max-width: 700px; /* Increase the max-width */
+    border-radius: 10px;
+}
+
+.city-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-info p {
+    margin: 5px 0;
+    color: #000; /* Set text color to black */
+    font-size: 16px;
+}
+
+.city-weather img {
+    width: 100px; /* Increase the width of the state flag */
+    height: 100px; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 100%;
+}
+
+.weather-emoji {
+    font-size: 130px; /* Increase the size of the emoji */
+    margin-left: 20px; /* Space between text and emoji */
+    flex-shrink: 0; /* Prevent the emoji from shrinking */
+    text-align: center;
+}
+
+#myBtn {
+    height: 50px;
+    width: 50px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: rgb(49, 157, 145);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#myBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+.Home {
+    position: absolute;
+    top: 10px; /* Distance from the top edge */
+    left: 10px; /* Distance from the left edge */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #4CAF50; /* Background color of the button */
+    color: white; /* Text color of the button */
+    border: none; /* Removes default border */
+    border-radius: 100px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 20px; /* Font size of the button text */
+    transition: all 0.5s; /* Smooth transition for hover effects */
+    z-index: 100; /* Ensures the button is on top of other content */
+}
+
+.Home:hover {
+    background-color: #3e8e41; /* Darker color on hover */
+}
+
+.Home:active {
+    background-color: #3e8e41; /* Darker color on active state */
+    box-shadow: 0 5px #666; /* Shadow effect on active state */
+    transform: translateY(4px); /* Pushes the button down slightly on click */
 }
