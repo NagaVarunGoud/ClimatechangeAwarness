@@ -26,16 +26,69 @@ document.addEventListener('DOMContentLoaded', (event) => {
         introAnimation.style.display = 'none';
     });
 });
+// scripts.js
 document.addEventListener("DOMContentLoaded", function() {
-    const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2';
+    const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
+    const cacheKey = 'climateChangeNews';
+    const cacheDuration = 3600000; // Cache duration in milliseconds (1 hour)
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const articles = data.articles;
+    function fetchAndDisplayNews() {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const articles = data.articles;
+                const newsContainer = document.getElementById('news-articles');
+
+                if (articles.length === 0) {
+                    newsContainer.innerHTML = '<p>No articles found.</p>';
+                } else {
+                    newsContainer.innerHTML = ''; // Clear existing content
+                    articles.forEach(article => {
+                        const articleDiv = document.createElement('div');
+                        articleDiv.className = 'news-article';
+
+                        const title = document.createElement('h3');
+                        title.textContent = article.title;
+
+                        const description = document.createElement('p');
+                        description.textContent = article.description;
+
+                        const link = document.createElement('a');
+                        link.href = article.url;
+                        link.textContent = 'Read more';
+                        link.target = '_blank';
+
+                        articleDiv.appendChild(title);
+                        articleDiv.appendChild(description);
+                        articleDiv.appendChild(link);
+
+                        newsContainer.appendChild(articleDiv);
+                    });
+
+                    // Save to localStorage with timestamp
+                    localStorage.setItem(cacheKey, JSON.stringify({
+                        articles: articles,
+                        timestamp: Date.now()
+                    }));
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching news:', error);
+                const newsContainer = document.getElementById('news-articles');
+                newsContainer.innerHTML = '<p>Error fetching news articles. Please try again later.</p>';
+            });
+    }
+
+    // Check for cached data
+    const cachedData = localStorage.getItem(cacheKey);
+    if (cachedData) {
+        const { articles, timestamp } = JSON.parse(cachedData);
+        const now = Date.now();
+        if (now - timestamp < cacheDuration) {
+            // Use cached data
             const newsContainer = document.getElementById('news-articles');
-
+            newsContainer.innerHTML = ''; // Clear existing content
             articles.forEach(article => {
                 const articleDiv = document.createElement('div');
                 articleDiv.className = 'news-article';
@@ -57,6 +110,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 newsContainer.appendChild(articleDiv);
             });
-        })
-        .catch(error => console.error('Error fetching news:', error));
+        } else {
+            // Cache expired, fetch new data
+            fetchAndDisplayNews();
+        }
+    } else {
+        // No cache, fetch data
+        fetchAndDisplayNews();
+    }
 });
