@@ -26,96 +26,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
         introAnimation.style.display = 'none';
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
+const fetch = require('node-fetch');
+
+exports.handler = async (event, context) => {
     const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
-    const cacheKey = 'climateChangeNews';
-    const cacheDuration = 3600000; // Cache duration in milliseconds (1 hour)
 
-    function fetchAndDisplayNews() {
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log('API Response:', data); // Log response for debugging
-                const articles = data.articles || [];
-                const newsContainer = document.getElementById('news-articles');
-
-                if (!articles.length) {
-                    newsContainer.innerHTML = '<p>No articles found.</p>';
-                } else {
-                    newsContainer.innerHTML = ''; // Clear existing content
-                    articles.forEach(article => {
-                        const articleDiv = document.createElement('div');
-                        articleDiv.className = 'news-article';
-
-                        const title = document.createElement('h3');
-                        title.textContent = article.title;
-
-                        const description = document.createElement('p');
-                        description.textContent = article.description;
-
-                        const link = document.createElement('a');
-                        link.href = article.url;
-                        link.textContent = 'Read more';
-                        link.target = '_blank';
-
-                        articleDiv.appendChild(title);
-                        articleDiv.appendChild(description);
-                        articleDiv.appendChild(link);
-
-                        newsContainer.appendChild(articleDiv);
-                    });
-
-                    // Save to localStorage with timestamp
-                    localStorage.setItem(cacheKey, JSON.stringify({
-                        articles: articles,
-                        timestamp: Date.now()
-                    }));
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching news:', error);
-                const newsContainer = document.getElementById('news-articles');
-                newsContainer.innerHTML = '<p>Error fetching news articles. Please try again later.</p>';
-            });
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return {
+            statusCode: 200,
+            body: JSON.stringify(data),
+        };
+    } catch (error) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Failed to fetch news' }),
+        };
     }
+};
+const url = '/.netlify/functions/news-proxy';
 
-    // Check for cached data
-    const cachedData = localStorage.getItem(cacheKey);
-    if (cachedData) {
-        const { articles, timestamp } = JSON.parse(cachedData);
-        const now = Date.now();
-        if (now - timestamp < cacheDuration) {
-            // Use cached data
+function fetchAndDisplayNews() {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log('API Response:', data); // Log response for debugging
+            const articles = data.articles || [];
             const newsContainer = document.getElementById('news-articles');
-            newsContainer.innerHTML = ''; // Clear existing content
-            articles.forEach(article => {
-                const articleDiv = document.createElement('div');
-                articleDiv.className = 'news-article';
+            
+            if (!articles.length) {
+                newsContainer.innerHTML = '<p>No articles found.</p>';
+            } else {
+                newsContainer.innerHTML = ''; // Clear existing content
+                articles.forEach(article => {
+                    const articleDiv = document.createElement('div');
+                    articleDiv.className = 'news-article';
+                    
+                    const title = document.createElement('h3');
+                    title.textContent = article.title;
+                    
+                    const description = document.createElement('p');
+                    description.textContent = article.description;
+                    
+                    const link = document.createElement('a');
+                    link.href = article.url;
+                    link.textContent = 'Read more';
+                    link.target = '_blank';
+                    
+                    articleDiv.appendChild(title);
+                    articleDiv.appendChild(description);
+                    articleDiv.appendChild(link);
+                    
+                    newsContainer.appendChild(articleDiv);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching news:', error);
+            const newsContainer = document.getElementById('news-articles');
+            newsContainer.innerHTML = '<p>Error fetching news articles. Please try again later.</p>';
+        });
+}
 
-                const title = document.createElement('h3');
-                title.textContent = article.title;
-
-                const description = document.createElement('p');
-                description.textContent = article.description;
-
-                const link = document.createElement('a');
-                link.href = article.url;
-                link.textContent = 'Read more';
-                link.target = '_blank';
-
-                articleDiv.appendChild(title);
-                articleDiv.appendChild(description);
-                articleDiv.appendChild(link);
-
-                newsContainer.appendChild(articleDiv);
-            });
-        } else {
-            // Cache expired, fetch new data
-            fetchAndDisplayNews();
-        }
-    } else {
-        // No cache, fetch data
-        fetchAndDisplayNews();
-    }
-});
+document.addEventListener("DOMContentLoaded", fetchAndDisplayNews);
