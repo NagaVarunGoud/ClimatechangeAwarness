@@ -9,19 +9,61 @@
 <body>
     <div class="container">
         <div class="photo">
+            <img src="https://media.licdn.com/dms/image/D5603AQHkbzsOVn5D8A/profile-displayphoto-shrink_400_400/0/1721022550553?e=1727308800&v=beta&t=t-uF4eB9CwuEgbQ20XYlvp3m9WiYjspqFHTCDerPqqY" alt="RAMINI SAI SRUJAN">
         </div>
         <div class="info">
             <h1>RAMINI SAI SRUJAN</h1>
-            <p>Web Developer / Tester</p>
+            <p>DEVELOPER / TESTER</p>
+            <p>Email: <a href="mailto:saisrujanramini@gmail.com">saisrujanramini@gmail.com</a></p>
+            <p>Phone: 7032547337</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-srujan-ramini-149b97248" target="_blank">linkedin.RSS</a></p>
+            <p>Resume: <a href="img/resume_rs.pdf" target="_blank">Get to know about RSS </a></p>
         </div>
     </div>
     <div class="container">
         <div class="photo">
+            <img src="https://media.licdn.com/dms/image/D5603AQFkWc2j2UPwDA/profile-displayphoto-shrink_200_200/0/1703926224963?e=2147483647&v=beta&t=tBbi8BDMZMKtXSYEIgnFiD8219IaJjuT9Olms5fLmjc" alt="D NAGA VARUN GOUD">
         </div>
         <div class="info">
             <h1>D NAGA VARUN GOUD</h1>
-            <p>Web Developer / Tester</p>
+            <p>DEVELOPER / TEAM LEAD</p>
+            <p>Email: <a href="mailto:nagavarun.goud.23@gmail.com">nagavarun.goud.23@gmail.com</a></p>
+            <p>Phone: 7032547337</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/nagavarun-goud-646a6529a" target="_blank">linked.GOUD</a></p>
+            <p>Resume: <a href="img/RESUME@NAGAVARUN.pdf" target="_blank">Get to know about NAGA VARUN</a></p>
         </div>
     </div>
+    <div class="container">
+        <div class="photo">
+            <img src="">
+        </div>
+        <div class="info">
+            <h1>HARINI RAYANA</h1>
+            <p>DESIGER / TESTER</p>
+            <p>Email: <a href="mailto:harinirayana@gmail.com">harinirayana@gmail.com</a></p>
+            <p>Phone: 7032547337</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/harini-rayana-81a484261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linked.harini</a></p>
+        </div>
+    </div>
+    <button id="myBtn">⬆</button>
+    <script src="scripts.js"></script>
+    <a href="index.html"><button class="Home"><b>&larr;</b></button></a>
+    <button id="myBtn">⬆</button>
+    <script>
+        window.onscroll = function() {
+            var btn = document.getElementById("myBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block"; // Show the button when scrolled down
+            } else {
+                btn.style.display = "none"; // Hide the button when at the top
+            }
+        };
+
+        document.getElementById("myBtn").onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        };
+    </script>
+    <a href="index.html"><button class="Home"><b>&larr;</b></button></a>
 </body>
 </html>
