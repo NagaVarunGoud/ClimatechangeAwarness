@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         introAnimation.style.display = 'none';
     });
 });
-// scripts.js
 document.addEventListener("DOMContentLoaded", function() {
     const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
     const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
@@ -37,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(url)
             .then(response => response.json())
             .then(data => {
+                console.log('API Response:', data); // Log response for debugging
                 const articles = data.articles || [];
                 const newsContainer = document.getElementById('news-articles');
 
