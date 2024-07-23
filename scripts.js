@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const url = '/.netlify/functions/news-proxy';
+    const url = '/.netlify/functions/newsproxy';
 
     function fetchAndDisplayNews() {
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 console.log('API Response:', data); // Log response for debugging
                 const articles = data.articles || [];
