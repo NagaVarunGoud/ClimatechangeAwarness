@@ -1,52 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const url = '/.netlify/functions/newsproxy';
+    // Check if the `news-articles` element exists on the page
+    const newsContainer = document.getElementById('news-articles');
+    if (newsContainer) {
+        const url = '/.netlify/functions/newsproxy';
 
-    function fetchAndDisplayNews() {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('API Response:', data); // Log response for debugging
-                const articles = data.articles || [];
-                const newsContainer = document.getElementById('news-articles');
+        function fetchAndDisplayNews() {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('API Response:', data); // Log response for debugging
+                    const articles = data.articles || [];
 
-                if (!articles.length) {
-                    newsContainer.innerHTML = '<p>No articles found.</p>';
-                } else {
-                    newsContainer.innerHTML = ''; // Clear existing content
-                    articles.forEach(article => {
-                        const articleDiv = document.createElement('div');
-                        articleDiv.className = 'news-article';
+                    if (!articles.length) {
+                        newsContainer.innerHTML = '<p>No articles found.</p>';
+                    } else {
+                        newsContainer.innerHTML = ''; // Clear existing content
+                        articles.forEach(article => {
+                            const articleDiv = document.createElement('div');
+                            articleDiv.className = 'news-article';
 
-                        const title = document.createElement('h3');
-                        title.textContent = article.title;
+                            const title = document.createElement('h3');
+                            title.textContent = article.title;
 
-                        const description = document.createElement('p');
-                        description.textContent = article.description;
+                            const description = document.createElement('p');
+                            description.textContent = article.description;
 
-                        const link = document.createElement('a');
-                        link.href = article.url;
-                        link.textContent = 'Read more';
-                        link.target = '_blank';
+                            const link = document.createElement('a');
+                            link.href = article.url;
+                            link.textContent = 'Read more';
+                            link.target = '_blank';
 
-                        articleDiv.appendChild(title);
-                        articleDiv.appendChild(description);
-                        articleDiv.appendChild(link);
+                            articleDiv.appendChild(title);
+                            articleDiv.appendChild(description);
+                            articleDiv.appendChild(link);
 
-                        newsContainer.appendChild(articleDiv);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching news:', error);
-                const newsContainer = document.getElementById('news-articles');
-                newsContainer.innerHTML = '<p>Error fetching news articles. Please try again later.</p>';
-            });
+                            newsContainer.appendChild(articleDiv);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching news:', error);
+                    newsContainer.innerHTML = '<p>Error fetching news articles. Please try again later.</p>';
+                });
+        }
+
+        fetchAndDisplayNews();
     }
-
-    fetchAndDisplayNews();
 });
