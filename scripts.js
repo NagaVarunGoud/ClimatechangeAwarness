@@ -26,27 +26,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         introAnimation.style.display = 'none';
     });
 });
-const fetch = require('node-fetch');
-
-exports.handler = async (event, context) => {
-    const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
-    const url = `https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return {
-            statusCode: 200,
-            body: JSON.stringify(data),
-        };
-    } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Failed to fetch news' }),
-        };
-    }
-};
-const url = '/.netlify/functions/news-proxy';
+const apiKey = 'abb41ee17bc44e459d3adcb267a6dfd2'; // Replace with your actual API key
+const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+const url = `${corsProxy}https://newsapi.org/v2/everything?q=climate+change&apiKey=${apiKey}`;
 
 function fetchAndDisplayNews() {
     fetch(url)
