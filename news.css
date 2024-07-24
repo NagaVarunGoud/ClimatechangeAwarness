@@ -68,7 +68,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
-div{ 
+.article-container { 
     flex-direction: column;
     align-content: stretch;
     justify-content: space-evenly;
