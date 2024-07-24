@@ -32,6 +32,7 @@ main {
 #news {
     max-width: 100%;
     margin: 0 auto;
+    background-color: #352c2c72;
 }
 
 #news h2 {
