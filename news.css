@@ -4,12 +4,12 @@ body {
     font-family: Arial, sans-serif;
     background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: #000; /* Set default text color to black */
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.415);
-    color: rgb(15, 14, 14);
+    color: #000; /* Set header text color to black */
     padding: 1em;
     text-align: center;
 }
@@ -17,7 +17,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: rgb(15, 14, 14);
+    color: #000; /* Set main heading color to black */
 }
 
 main {
@@ -36,7 +36,7 @@ main {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-    color: rgb(15, 14, 14);
+    color: #000; /* Set section heading color to black */
 }
 
 /* Article container styles */
@@ -60,14 +60,14 @@ main {
 .article-container h3 {
     font-size: 1.5em;
     margin-top: 0;
-    color: #000; /* Heading color set to black */
+    color: #000; /* Set article heading color to black */
     text-align: center;
 }
 
 .article-container p {
     margin: 10px 0;
     line-height: 1.6;
-    color: #fff;
+    color: #000; /* Set article text color to black */
     text-align: center;
 }
 
@@ -80,4 +80,5 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    color: #000; /* Set footer text color to black */
 }
