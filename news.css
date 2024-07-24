@@ -17,7 +17,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #fff;
+    color: rgb(15, 14, 14);
 }
 
 main {
@@ -36,7 +36,7 @@ main {
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-    color: #4CAF50;
+    color: rgb(15, 14, 14);
 }
 
 /* Article container styles */
