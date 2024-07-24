@@ -73,7 +73,7 @@ footer {
 }
 .article-container { 
     flex-direction: column;
-    align-content: stretch;
+    align-content: center;
     justify-content: space-evenly;
     align-items: baseline;
     display: flex;
