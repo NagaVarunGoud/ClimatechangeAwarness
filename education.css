@@ -21,10 +21,11 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1rem;
 }
 
@@ -58,19 +59,19 @@ section h2 {
     height: 315px;
 }
 
-ul {
+.course-list, .book-list {
     list-style: none;
     padding: 0;
 }
 
-ul li {
+.course-item, .book-item {
     background: #fff;
     margin: 0.5rem 0;
     padding: 1rem;
     border: 1px solid #eaeaea;
 }
 
-ul li a {
+.course-item a, .book-item a {
     text-decoration: none;
     color: #333;
 }
