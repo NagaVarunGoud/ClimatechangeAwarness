@@ -1,36 +1,35 @@
-/* Reset some default browser styles */
-body, h1, form, label, input, button, p {
+body, form, label, input, button, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+h1 {
 
-/* Body styles */
+    color: rgb(14, 14, 14);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+header{
+    
+    background-color: rgba(0, 0, 0, 0.415);
+    color: #000; 
+    padding: 1em;
+    text-align: center;
+    width: 97.8%;
+}
 body {
-    background-image: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg');
-    background-repeat: no-repeat;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-color: #f0f0f0;
-    color: #333;
+    color: #000; /* Set default text color to black */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
+    justify-content: space-between;
 }
 
-/* Header styles */
-header {
-    margin-bottom: 20px;
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #000000;
-    text-align: center;
-}
 
 /* Section styles */
 section {
