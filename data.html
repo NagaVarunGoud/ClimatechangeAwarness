@@ -4,42 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Info</title>
-    <style>
-        #weather {
-            font-family: Arial, sans-serif;
-        }
-    </style>
     <link rel="stylesheet" href="data.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Weather Information</h1>
-    <div id="weather">
-        <p id="city"></p>
-        <p id="temperature"></p>
-        <p id="description"></p>
-    </div>
+    <h1>REAL TIME WEATHER MONITOR   </h1>
+    <div id="weather"></div>
 
     <script>
-        const apiKey = '9018b1fed30134e8ee1da63c828bb3e2'; // Replace with your actual API key
-        const city = 'Hyderabad'; // Replace with the desired city
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+       const apiKey = '9018b1fed30134e8ee1da63c828bb3e2'; // Replace with your actual API key
+const states = [
+    { name: 'Andhra Pradesh', capital: 'Amaravati', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Flag_of_Andhra_Pradesh.svg/270px-Flag_of_Andhra_Pradesh.svg.png' },
+    { name: 'Arunachal Pradesh', capital: 'Itanagar', image: 'path/to/arunachal_pradesh.jpg' },
+    { name: 'Assam', capital: 'Dispur', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Flag_of_Assam%2C_India.svg/270px-Flag_of_Assam%2C_India.svg.png' },
+    { name: 'Bihar', capital: 'Patna', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bihar_Government_Banner.png/270px-Bihar_Government_Banner.png' },
+    { name: 'Chhattisgarh', capital: 'Raipur', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Chhattisgarh_Flag%28INDIA%29.png/270px-Chhattisgarh_Flag%28INDIA%29.png' },
+    { name: 'Goa', capital: 'Panaji', image: 'path/to/goa.jpg' },
+    { name: 'Gujarat', capital: 'Gandhinagar', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Flag_of_Gujarat.svg/252px-Flag_of_Gujarat.svg.png' },
+    { name: 'Haryana', capital: 'Chandigarh', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Haryana.svg/270px-Flag_of_Haryana.svg.png' },
+    { name: 'Himachal Pradesh', capital: 'Shimla', image: 'path/to/himachal_pradesh.jpg' },
+    { name: 'Jharkhand', capital: 'Ranchi', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Government_banner_of_Jharkhand.png/270px-Government_banner_of_Jharkhand.png' },
+    { name: 'Karnataka', capital: 'Bengaluru', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flag_of_Karnataka%2C_India.png/270px-Flag_of_Karnataka%2C_India.png' },
+    { name: 'Kerala', capital: 'Thiruvananthapuram', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Flag_of_Karnataka%2C_India.png/270px-Flag_of_Karnataka%2C_India.png' },
+    { name: 'Madhya Pradesh', capital: 'Bhopal', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Flag_of_Madhya_Pradesh.svg/270px-Flag_of_Madhya_Pradesh.svg.png' },
+    { name: 'Maharashtra', capital: 'Mumbai', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Maharashtra.svg/270px-Flag_of_Maharashtra.svg.png' },
+    { name: 'Manipur', capital: 'Imphal', image: 'path/to/manipur.jpg' },
+    { name: 'Meghalaya', capital: 'Shillong', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Meghalaya_Flag%28INDIA%29.png/270px-Meghalaya_Flag%28INDIA%29.png' },
+    { name: 'Mizoram', capital: 'Aizawl', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Mizoram_Flag%28INDIA%29.png/270px-Mizoram_Flag%28INDIA%29.png' },
+    { name: 'Nagaland', capital: 'Kohima', image: 'path/to/nagaland.jpg' },
+    { name: 'Odisha', capital: 'Bhubaneswar', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Orissa_Flag%28INDIA%29.png/270px-Orissa_Flag%28INDIA%29.png' },
+    { name: 'Punjab', capital: 'Chandigarh', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Banner_of_Punjab%2C_India.svg/270px-Banner_of_Punjab%2C_India.svg.png' },
+    { name: 'Rajasthan', capital: 'Jaipur', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Flag_of_Rajasthan.svg/270px-Flag_of_Rajasthan.svg.pngath/to/rajasthan.jpg' },
+    { name: 'Sikkim', capital: 'Gangtok', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_the_Government_of_Sikkim.svg/270px-Flag_of_the_Government_of_Sikkim.svg.png' },
+    { name: 'Tamil Nadu', capital: 'Chennai', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/..Tamil_Nadu_Flag%28INDIA%29.png/270px-..Tamil_Nadu_Flag%28INDIA%29.png' },
+    { name: 'Telangana', capital: 'Hyderabad', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Flag_of_the_Government_of_Telangana.svg/270px-Flag_of_the_Government_of_Telangana.svg.png' },
+    { name: 'Tripura', capital: 'Agartala', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Tiripura_Flag%28INDIA%29.png/270px-Tiripura_Flag%28INDIA%29.png' },
+    { name: 'Uttar Pradesh', capital: 'Lucknow', image: 'path/to/uttar_pradesh.jpg' },
+    { name: 'Uttarakhand', capital: 'Dehradun', image: 'path/to/uttarakhand.jpg' },
+    { name: 'West Bengal', capital: 'Kolkata', image: 'path/to/west_bengal.jpg' }
+];
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.cod && data.cod !== 200) {
-                    console.error('API Error:', data.message);
-                    document.getElementById('weather').textContent = `Error: ${data.message}`;
-                } else {
-                    document.getElementById('city').textContent = `City: ${data.name}`;
-                    document.getElementById('temperature').textContent = `Temperature: ${data.main.temp} °C`;
-                    document.getElementById('description').textContent = `Weather: ${data.weather[0].description}`;
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching weather data:', error);
-                document.getElementById('weather').textContent = 'Error loading weather data.';
-            });
+const weatherContainer = document.getElementById('weather');
+
+const getEmoji = (description) => {
+    const emojis = {
+        clear: '☀️',
+        clouds: '☁️',
+        rain: '🌧️',
+        snow: '❄️',
+        mist: '🌫️',
+        thunderstorm: '⛈️',
+        drizzle: '🌦️'
+    };
+
+    for (let key in emojis) {
+        if (description.toLowerCase().includes(key)) {
+            return emojis[key];
+        }
+    }
+    return '❓';
+};
+
+states.forEach(state => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(state.capital)}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod && data.cod !== 200) {
+                console.error('API Error:', data.message);
+                weatherContainer.innerHTML += `<div class="city-weather">
+                    <img src="${state.image}" alt="${state.name}">
+                    <div class="city-info">
+                        <p>Error: ${data.message}</p>
+                    </div>
+                    <span class="weather-emoji">❓</span>
+                </div>`;
+            } else {
+                const weatherDescription = data.weather[0].description;
+                const emoji = getEmoji(weatherDescription);
+                weatherContainer.innerHTML += `<div class="city-weather">
+                    <img src="${state.image}" alt="${state.name}">
+                    <div class="city-info">
+                        <p>State: ${state.name}</p>
+                        <p>Capital: ${data.name}</p>
+                        <p>Temperature: ${data.main.temp} °C</p>
+                        <p>Weather: ${weatherDescription}</p>
+                    </div>
+                    <span class="weather-emoji">${emoji}</span>
+                </div>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            weatherContainer.innerHTML += `<div class="city-weather">
+                <img src="${state.image}" alt="${state.name}">
+                <div class="city-info">
+                    <p>Error loading weather data for ${state.name}.</p>
+                </div>
+                <span class="weather-emoji">❓</span>
+            </div>`;
+        });
+});
+
     </script>
+        <button id="myBtn">⬆</button>
+        <script src="scripts.js"></script>
+        <a href="index.html"><button class="Home"><b>&larr;</b></button></a>
+        <button id="myBtn">⬆</button>
+        <script>
+            window.onscroll = function() {
+                var btn = document.getElementById("myBtn");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    btn.style.display = "block"; // Show the button when scrolled down
+                } else {
+                    btn.style.display = "none"; // Hide the button when at the top
+                }
+            };
+    
+            document.getElementById("myBtn").onclick = function() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            };
+        </script>
+        <a href="index.html"><button class="Home"><b>&larr;</b></button></a>
 </body>
 </html>
