@@ -14,7 +14,7 @@ body {
 
 header {    
     background-color: #a3cccc;
-    color: white;
+    color: rgb(15, 14, 14);
     padding: 1em;
     text-align: center;
     background: rgba(0, 0, 0, 0.415);
@@ -31,9 +31,10 @@ main {
 }
 
 #news {
-    max-width: 100%;
+    max-width: 80%;
     margin: 0 auto;
     background-color: #352c2c72;
+    color:rgba(241, 234, 234, 0.555);
 }
 
 #news h2 {
