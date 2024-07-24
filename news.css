@@ -76,3 +76,13 @@ footer {
     width: 100%;
     bottom: 0;
 }
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 10px;
+}
