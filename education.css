@@ -64,13 +64,13 @@ section h2 {
     height: 315px;
 }
 
-.course-list, .book-list {
+.course-list, .book-list, .research-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.course-item, .book-item {
+.course-item, .book-item, .research-item {
     background: #fff;
     margin: 0.5rem 0;
     padding: 1rem;
@@ -78,7 +78,7 @@ section h2 {
     border-radius: 8px;
 }
 
-.course-item a, .book-item a {
+.course-item a, .book-item a, .research-item a {
     text-decoration: none;
     color: #333;
 }
