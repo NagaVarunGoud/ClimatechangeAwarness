@@ -42,14 +42,6 @@ main {
 }
 
  
-.article-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.321);
-    margin-bottom: 20px;
-    padding: 20px;
-    transition: transform 0.2s;
-}
 
 .article-container:hover {
     transform: translateY(-5px);
@@ -76,7 +68,7 @@ footer {
     width: 100%;
     bottom: 0;
 }
-/*div{ 
+div{ 
     flex-direction: column;
     align-content: stretch;
     justify-content: space-evenly;
@@ -89,4 +81,4 @@ footer {
     box-sizing: border-box;
     position: relative;
     margin: 10px;
-}*/
+}
