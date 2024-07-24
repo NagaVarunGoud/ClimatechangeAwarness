@@ -5,7 +5,6 @@ body {
     background-size: cover;
     color: #fff;
 }
-/* General styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,10 +12,12 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #4CAF50;
+header {    
+    background-color: #a3cccc;
     color: white;
-    padding: 20px;
+    padding: 1em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.415);
     text-align: center;
 }
 
