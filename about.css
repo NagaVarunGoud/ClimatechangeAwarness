@@ -5,6 +5,20 @@ body {
     background-size: cover;
     color: #fff;
 }
+header {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(0, 0, 0, 0.415);
+    color: #000;
+    padding: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+    top: 0%;
+    width: 100%;
+}
+header h3{
+    font-style: italic;
+    color: bisque
+}
 
 .container {
     display: flex;
