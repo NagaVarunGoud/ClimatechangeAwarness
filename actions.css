@@ -5,10 +5,15 @@ body {
 }
 
 header {
-    background-color: #38a9308f;
-    color: white;
-    padding: 10px 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(0, 0, 0, 0.415);
+    color: #000;
+    padding: 1em;
     text-align: center;
+}
+
+header h4 {
+    color: white;
 }
 
 nav ul {
