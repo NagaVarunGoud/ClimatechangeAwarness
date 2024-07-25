@@ -6,7 +6,6 @@ body {
     color: #000; /* Set default text color to black */
 }
 
-
 h1 {
 
     color: rgb(14, 14, 14);
@@ -14,12 +13,16 @@ h1 {
     text-align: center;
 }
 header{
-    
+    font-family: 'Times New Roman', Times, serif;
     background-color: rgba(0, 0, 0, 0.415);
     color: #000; 
     padding: 1em;
     text-align: center;
 }
+h3{
+    color: bisque;
+}
+
 #weather {
     display: flex;
     flex-direction: column;
