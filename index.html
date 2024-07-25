@@ -86,19 +86,21 @@
         <footer>
             <section id="query" class="query-section">
                 <h2>Send Us Your Queries</h2>
-                <form action="send_email.php" method="post">
+                <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+                    
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
-            
+                    
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-            
+                    
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
-            
+                    
                     <button type="submit" class="submit-btn">Submit</button>
                 </form>
-            </section>
+            </section>            
             <div class="footer-content">
                 <div class="footer-section">
                     <h2>Contact Us</h2>
