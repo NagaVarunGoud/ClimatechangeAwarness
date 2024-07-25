@@ -5,10 +5,31 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 20px;
     background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+}
+.quote{
+
+    text-align: center;
+    text-decoration: dotted;
+    text-transform: capitalize;
+    font-family: 'Playfair Display', serif; 
+    color: rgba(0, 0, 0, 0.756);
+    font-style: italic;
+    margin: 30px;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.415);
+    color: #000;
+    padding: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+    top: 0%;
+    width: 100%;
+}
+header h3{
+    color: bisque
 }
 
 
