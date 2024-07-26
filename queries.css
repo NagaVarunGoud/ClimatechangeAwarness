@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://wallpapers.com/images/hd/4k-blue-minimalist-deer-5fc2dalaakntatt7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-image {
+    max-width: 800px;
+    height: auto;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.about-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-btn:hover {
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
+.about-btn svg {
+    fill: white;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.about-btn span {
+    color: white;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
