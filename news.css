@@ -7,17 +7,7 @@ body {
 }
 
 div{
-   /* width: 100%;
-    display: flex;
-    background: rgba(0, 0, 0, 0.321);
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    margin: 10px;
-    flex-direction: column;
-    align-content: stretch;
-    justify-content: space-evenly;
-    align-items: baseline;*/
+
 
     display: flex;
     align-items: center;
