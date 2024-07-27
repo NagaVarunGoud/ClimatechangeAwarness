@@ -11,7 +11,7 @@
         <img id="intro-logo" src="img/logo.png" alt="Intro Logo">
     </div>
     <header>
-        <img class="head" src="img/Climate_Awarness-removebg-preview.png" alt="Climate Awareness">
+        <img class="head" src="img/Climate_Awarness-removebg-preview.png">
         <img class="logo" src="img/logo.png" alt="LOGO">
         <nav>
             <ul>
@@ -64,7 +64,7 @@
                 <h5>Join and start your hands-on experience with the community</h5>
             </a>
         </section>
-        <button id="myBtn" style="display:none;">⬆</button>
+        <button id="myBtn" style="display:none;">&#x2191</button>
     </main>
     <footer>
         <div class="footer-content">
@@ -104,28 +104,25 @@
         </section>
     </footer>
     <script>
-        window.onscroll = function() {
-            var btn = document.getElementById("myBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                btn.style.display = "block"; 
-            } else {
-                btn.style.display = "none"; 
-            }
-        };
+            window.onscroll = function() {
+                var btn = document.getElementById("myBtn");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    btn.style.display = "block"; // Show the button when scrolled down
+                } else {
+                    btn.style.display = "none"; // Hide the button when at the top
+                }
+            };
+
+            document.getElementById("myBtn").onclick = function() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            };
 
         function handleSubmit(event) {
             event.preventDefault();
             window.location.href = "querie.html";
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const introAnimation = document.getElementById('intro-animation');
-            if (introAnimation) {
-                introAnimation.addEventListener('animationend', () => {
-                    introAnimation.style.display = 'none';
-                });
-            }
-        });
     </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
