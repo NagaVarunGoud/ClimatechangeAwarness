@@ -314,7 +314,7 @@ h1 {
     background-color: #3E8E41;
     opacity: 90%;
 }
-
+/*
 .s1 {
     background-image: url('https://www.teachhub.com/wp-content/uploads/2020/05/Top-12-Pioneers-in-Education-scaled.jpg');
     background-size: cover;
@@ -343,9 +343,9 @@ h1 {
 .s5 {
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/187/373/small/concept-save-the-world-save-environment-the-world-is-in-the-grass-photo.jpg');
     background-size: cover;
-}
+}*/
 
-/* Full Link */
+
 .full-link {
     position: absolute;
     top: 0;
@@ -386,3 +386,4 @@ h1 {
     background-color: #45a049;
     transform: scale(1.1);
 }
+    
