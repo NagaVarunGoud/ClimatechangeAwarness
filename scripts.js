@@ -2,12 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('carbon-calculator-form');
     const result = document.getElementById('calculator-result');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        const footprint = calculateCarbonFootprint(data);
-        result.textContent = `Your estimated carbon footprint is ${footprint} tons of CO2 per year.`;
-    });
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const footprint = calculateCarbonFootprint(data);
+            result.textContent = `Your estimated carbon footprint is ${footprint} tons of CO2 per year.`;
+        });
+    }
 
     function calculateCarbonFootprint(data) {
         // Simple calculation based on hypothetical factors
@@ -16,15 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const travel = data.get('travel') * 0.002;
         return (electricity + gas + travel).toFixed(2);
     }
-});
-// scripts.js
-document.addEventListener('DOMContentLoaded', (event) => {
-    const myBtn = document.getElementById('myBtn');
-    if (myBtn) {
-        myBtn.addEventListener('click', function() {
-            document.body.scrollTop = 0; 
-            document.documentElement.scrollTop = 0; 
+
+    const introAnimation = document.getElementById('intro-animation');
+    if (introAnimation) {
+        introAnimation.addEventListener('animationend', () => {
+            introAnimation.style.display = 'none';
         });
     }
 });
-
