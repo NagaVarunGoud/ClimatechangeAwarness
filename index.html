@@ -11,7 +11,7 @@
         <img id="intro-logo" src="img/logo.png" alt="Intro Logo">
     </div>
     <header>
-        <img class="head" src="img/Climate_Awarness-removebg-preview.png">
+        <img class="head" src="img/Climate_Awarness-removebg-preview.png" alt="Climate Awareness">
         <img class="logo" src="img/logo.png" alt="LOGO">
         <nav>
             <ul>
@@ -117,7 +117,15 @@
             event.preventDefault();
             window.location.href = "querie.html";
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const introAnimation = document.getElementById('intro-animation');
+            if (introAnimation) {
+                introAnimation.addEventListener('animationend', () => {
+                    introAnimation.style.display = 'none';
+                });
+            }
+        });
     </script>
-    <script src="scripts.js"></script>
 </body>
 </html>
